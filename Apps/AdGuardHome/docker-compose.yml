@@ -1,12 +1,12 @@
-name: AdGuardHome
+name: adguard
 services:
-  adguard-home:
+  AdGuardHome:
     image: adguard/adguardhome:latest
     deploy:
       resources:
         reservations:
           memory: 64M
-    network_mode: bridge
+    network_mode: host
     ports:
       - target: 53
         published: "53"
