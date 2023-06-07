@@ -5,12 +5,12 @@ services:
       PGID: $PGID
       PUID: $PUID
       TZ: $TZ
-    image: linuxserver/radarr:4.3.2
+    image: hotio/radarr:nightly
     deploy:
       resources:
         reservations:
           memory: "256M"
-    network_mode: bridge
+    network_mode: server
     ports:
       - target: 7878
         published: "7878"
@@ -21,10 +21,10 @@ services:
         source: /DATA/AppData/$AppID/config
         target: /config
       - type: bind
-        source: /DATA/Media/Movies
-        target: /movies
+        source: /DATA/Media
+        target: /media
       - type: bind
-        source: /DATA/Downloads
+        source: /DATA/Media/Downloads
         target: /downloads
     x-casaos:
       envs:
