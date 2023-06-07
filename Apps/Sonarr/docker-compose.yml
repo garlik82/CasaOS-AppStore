@@ -1,16 +1,17 @@
-name: sonarr
+name: Sonarr
 services:
-  sonarr:
+  Sonarr:
     environment:
       PGID: $PGID
       PUID: $PUID
       TZ: $TZ
-    image: linuxserver/sonarr:3.0.10
+    image: hotio/sonarr:v4
+    container_name: Sonarr
     deploy:
       resources:
         reservations:
           memory: "256M"
-    network_mode: bridge
+    network_mode: server
     ports:
       - target: 8989
         published: "8989"
@@ -21,11 +22,8 @@ services:
         source: /DATA/AppData/$AppID/config
         target: /config
       - type: bind
-        source: /DATA/Media/TV Shows
-        target: /tv
-      - type: bind
-        source: /DATA/Downloads
-        target: /downloads
+        source: /DATA/Media
+        target: /media
     x-casaos:
       envs:
         - container: TZ
