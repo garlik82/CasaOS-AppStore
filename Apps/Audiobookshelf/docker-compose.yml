@@ -82,4 +82,4 @@ x-casaos:
   title:
     en_us: Audiobookshelf
   index: /
-  port_map: "80"
+  port_map: "13378"
