@@ -61,7 +61,7 @@ x-casaos:
   architectures:
     - amd64
     - arm64
-  main: sonarr
+  main: Sonarr
   author: CasaOS Team
   category: Media
   description:
