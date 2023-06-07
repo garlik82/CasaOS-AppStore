@@ -1,12 +1,11 @@
 name: sonarr
 services:
-  Sonarr:
+  sonarr:
     environment:
       PGID: $PGID
       PUID: $PUID
       TZ: $TZ
-    image: hotio/sonarr:v4
-    container_name: sonarr
+    image: hotio/sonarr:4
     deploy:
       resources:
         reservations:
@@ -43,6 +42,7 @@ services:
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP端口
+
       volumes:
         - container: /config
           description:
