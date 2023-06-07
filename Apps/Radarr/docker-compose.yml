@@ -24,7 +24,6 @@ services:
       - type: bind
         source: /DATA/Media
         target: /media
-      - type: bind
     x-casaos:
       envs:
         - container: TZ
