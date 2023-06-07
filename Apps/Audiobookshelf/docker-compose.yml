@@ -1,1 +1,99 @@
+name: audiobookshelf
+services:
+  audiobookshelf:
+    environment:
+      PGID: $PGID
+      PUID: $PUID
+      TZ: $TZ
+    image: advplyr/audiobookshelf:latest
+    deploy:
+      resources:
+        reservations:
+          memory: "256M"
+    network_mode: server
+    ports:
+      - target: 80
+        published: "13378"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/$AppID/metadata
+        target: /metadata  
+      - type: bind
+        source: /DATA/Media/Audiobooks
+        target: /audiobooks
+    x-casaos:
+      envs:
+        - container: TZ
+          description:
+            en_us: TimeZone
+            zh_cn: 时区
+        - container: PUID
+          description:
+            en_us: Run Audiobookshelf as specified uid.
+            zh_cn: 以指定的uid运行Radarr
+        - container: PGID
+          description:
+            en_us: Run Audiobookshelf as specified gid.
+            zh_cn: 以指定的gid运行Radarr
+      ports:
+        - container: "13378"
+          description:
+            en_us: WebUI HTTP Port
+            zh_cn: WebUI HTTP端口
 
+      volumes:
+        - container: /config
+          description:
+            en_us: Audiobookshelf config directory.
+            zh_cn: Audiobookshelf配置目录
+        - container: /audiobooks
+          description:
+            en_us: Audiobooks movies directory.
+            zh_cn: Audiobooks电影目录
+        - container: /metadata
+          description:
+            en_us: Audiobookshelf metadata directory.
+            zh_cn: Audiobookshelf下载目录
+x-casaos:
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  main: audiobookshelf
+  author: advplyr
+  category: Media
+  description:
+    en_us: Audiobookshelf is a self-hosted audiobook and podcast server.
+  developer: advplyr
+  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Radarr/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Radarr/screenshot-1.jpg
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Radarr/screenshot-2.jpg
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Radarr/screenshot-3.jpg
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Radarr/screenshot-4.jpg
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Radarr/screenshot-5.jpg
+  tagline:
+    en_us: The movie collection manager for Usenet and BitTorrent users
+    zh_cn: 为Usenet和BitTorrent用户提供的电影集合管理器
+    ar_sa: مدير مجموعة أفلام لمستخدمي Usenet و BitTorrent
+    de_de: Der Film-Sammlungs-Manager für Usenet- und BitTorrent-Nutzer
+    es_es: El administrador de colecciones de películas para usuarios de Usenet y BitTorrent
+    fr_fr: Le gestionnaire de collections de films pour les utilisateurs de Usenet et de BitTorrent
+    hu_hu: A Usenet és BitTorrent felhasználók filmgyűjteménye
+    it_it: Il gestore di collezioni di film per gli utenti di Usenet e BitTorrent
+    ru_ru: Менеджер коллекций фильмов для пользователей Usenet и BitTorrent
+    pl_pl: Menedżer kolekcji filmów dla użytkowników Usenet i BitTorrent
+    pt_br: O gerenciador de coleções de filmes para usuários de Usenet e BitTorrent
+    sv_se: Filmkolektionshanteraren för användare av Usenet och BitTorrent
+    uk_ua: Менеджер колекцій фільмів для користувачів Usenet і BitTorrent
+  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Radarr/thumbnail.jpg
+  tips: {}
+  title:
+    en_us: Audiobookshelf
+  index: /
+  port_map: "80"
