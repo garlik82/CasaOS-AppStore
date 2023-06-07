@@ -1,4 +1,4 @@
-name: radarr
+name: Radarr
 services:
   Radarr:
     environment:
@@ -6,6 +6,7 @@ services:
       PUID: $PUID
       TZ: $TZ
     image: hotio/radarr:nightly
+    container_name: Radarr
     deploy:
       resources:
         reservations:
