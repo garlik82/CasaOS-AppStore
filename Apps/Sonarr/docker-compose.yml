@@ -5,7 +5,7 @@ services:
       PGID: $PGID
       PUID: $PUID
       TZ: $TZ
-    image: hotio/sonarr:4
+    image: hotio/sonarr:v4
     deploy:
       resources:
         reservations:
