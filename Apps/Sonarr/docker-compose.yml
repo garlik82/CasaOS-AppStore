@@ -43,7 +43,6 @@ services:
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP端口
-
       volumes:
         - container: /config
           description:
