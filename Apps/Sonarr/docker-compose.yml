@@ -1,4 +1,4 @@
-name: Sonarr
+name: sonarr
 services:
   Sonarr:
     environment:
@@ -6,7 +6,7 @@ services:
       PUID: $PUID
       TZ: $TZ
     image: hotio/sonarr:v4
-    container_name: Sonarr
+    container_name: sonarr
     deploy:
       resources:
         reservations:
@@ -60,7 +60,7 @@ x-casaos:
   architectures:
     - amd64
     - arm64
-  main: Sonarr
+  main: sonarr
   author: CasaOS Team
   category: Media
   description:
