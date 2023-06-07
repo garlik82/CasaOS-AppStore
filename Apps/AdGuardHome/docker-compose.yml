@@ -1,4 +1,4 @@
-name: adguard-home
+name: AdGuardHome
 services:
   adguard-home:
     image: adguard/adguardhome:latest
