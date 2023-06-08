@@ -70,7 +70,7 @@ x-casaos:
     sv_se: Plex organiserar video, musik och foton från personliga mediebibliotek och strömmar dem till smarta TV-apparater, streamingboxar och mobila enheter. Denna behållare är förpackad som en självständig Plex Media Server. Plex har alltid varit en topprioritet. Enkel design och massiva åtgärder betyder att saker blir gjorda snabbare.
     uk_ua: Plex організує відео, музику і фотографії з особистих медіатек і передає їх на розумні телевізори, стрімінгові бокси і мобільні пристрої. Цей контейнер упакований як незалежний сервер мультимедіа Plex. Plex завжди був в пріоритеті. Простий дизайн і масові дії означають, що речі йдуть швидше.
   developer: Plex
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Plex/icon.png
+  icon: https://cdn.jsdelivr.net/gh/garlik82/CasaOS-AppStore@main/Apps/Plex/icon-plex.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Plex/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Plex/screenshot-2.png
