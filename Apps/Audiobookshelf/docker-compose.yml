@@ -6,6 +6,7 @@ services:
       PUID: $PUID
       TZ: $TZ
     image: advplyr/audiobookshelf:latest
+    container_name: audiobookshelf
     deploy:
       resources:
         reservations:
