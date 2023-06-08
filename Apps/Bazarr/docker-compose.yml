@@ -11,7 +11,7 @@ services:
       resources:
         reservations:
           memory: 64M
-    network_mode: bridge
+    network_mode: server
     ports:
       - target: 6767
         published: "6767"
