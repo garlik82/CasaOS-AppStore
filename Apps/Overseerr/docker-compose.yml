@@ -60,11 +60,11 @@ x-casaos:
   description:
     en_us: Overseerr is a request management and media discovery tool built to work with your existing Plex ecosystem. 
   developer: Ryan Cohen
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Overseerr/icon.png
+  icon: https://cdn.jsdelivr.net/gh/garlik82/CasaOS-AppStore@main/Apps/Overseerr/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Overseerr/screenshot-1.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Overseerr/screenshot-2.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Overseerr/screenshot-3.jpg
+    - https://cdn.jsdelivr.net/gh/garlik82/CasaOS-AppStore@main/Apps/Overseerr/screenshot-1.jpg
+    - https://cdn.jsdelivr.net/gh/garlik82/CasaOS-AppStore@main/Apps/Overseerr/screenshot-2.jpg
+    - https://cdn.jsdelivr.net/gh/garlik82/CasaOS-AppStore@main/Apps/Overseerr/screenshot-3.jpg
   tagline:
     en_us: Request app for your Plex server. Overseerr scans your Plex libraries at regular intervals, so it knows which items are already available on your server. It also integrates with the popular DVR applications Radarr and Sonarr, and supports activity monitoring within Overseerr itself.
     
