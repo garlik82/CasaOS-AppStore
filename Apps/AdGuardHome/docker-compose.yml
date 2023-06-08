@@ -2,6 +2,7 @@ name: adguard
 services:
   AdGuardHome:
     image: adguard/adguardhome:latest
+    container_name: adguardhome
     deploy:
       resources:
         reservations:
