@@ -7,6 +7,7 @@ services:
       TZ: $TZ
       UMASK: "002"
     image: sctx/overseerr:develop
+    container_name: overseerr
     deploy:
       resources:
         reservations:
@@ -46,7 +47,7 @@ services:
             zh_cn: WebUI HTTP 端口
 
       volumes:
-        - container: /config
+        - container: /app/config
           description:
             en_us: Overseerr config directory.
             zh_cn: Overseerr 配置目录。
@@ -54,7 +55,7 @@ x-casaos:
   architectures:
     - amd64
     - arm64
-  main: Overseerr
+  main: overseerr
   author: Ryan Cohen
   category: Media
   description:
