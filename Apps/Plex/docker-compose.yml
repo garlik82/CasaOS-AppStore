@@ -9,6 +9,7 @@ services:
       PUID: $PUID
       VERSION: docker
     image: linuxserver/plex:latest
+    container_name: plex
     deploy:
       resources:
         reservations:
@@ -21,7 +22,7 @@ services:
         target: /config
       - type: bind
         source: /DATA/Media
-        target: /Media
+        target: /media
     x-casaos:
       envs:
         - container: PUID
