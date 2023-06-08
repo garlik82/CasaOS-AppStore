@@ -80,7 +80,7 @@ x-casaos:
     sv_se: qBittorrent-projektets mål är att erbjuda en öppen källkodsalternativ till µTorrent.
     uk_ua: Проект qBittorrent має на меті надати альтернативу з відкритим вихідним кодом для µTorrent.
   developer: qBittorrent
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/icon.png
+  icon: https://cdn.jsdelivr.net/gh/garlik82/CasaOS-AppStore@main/Apps/qBittorrent/icon%20qbittorrent.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/screenshot-1.jpg
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/screenshot-2.jpg
