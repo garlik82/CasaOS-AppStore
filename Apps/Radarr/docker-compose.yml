@@ -1,6 +1,6 @@
 name: radarr
 services:
-  Radarr:
+  radarr:
     environment:
       PGID: $PGID
       PUID: $PUID
