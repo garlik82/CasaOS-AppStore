@@ -20,7 +20,7 @@ services:
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/config
-        target: /config
+        target: /app/config
     x-casaos:
       envs:
         - container: TZ
