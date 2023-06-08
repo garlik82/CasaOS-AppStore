@@ -7,22 +7,6 @@ services:
         reservations:
           memory: 64M
     network_mode: host
-    ports:
-      - target: 53
-        published: "53"
-        protocol: tcp
-      - target: 53
-        published: "53"
-        protocol: udp
-      - target: 3000
-        published: "3001"
-        protocol: tcp
-      - target: 853
-        published: "853"
-        protocol: tcp
-      - target: 784
-        published: "784"
-        protocol: udp
     restart: unless-stopped
     volumes:
       - type: bind
@@ -31,24 +15,10 @@ services:
       - type: bind
         source: /DATA/AppData/$AppID/opt/adguardhome/conf
         target: /opt/adguardhome/conf
-    x-casaos:
-      ports:
-        - container: "53"
-          description:
-            en_us: ""
-        - container: "53"
-          description:
-            en_us: ""
-        - container: "3000"
-          description:
-            en_us: ""
-        - container: "853"
-          description:
-            en_us: ""
-        - container: "784"
-          description:
-            en_us: ""
-
+      - type: bind
+        source: /DATA/AppData/$AppID/opt/adguardhome/certs
+        target: /certs
+    x-casaos:    
       volumes:
         - container: /opt/adguardhome/work
           description:
@@ -105,4 +75,4 @@ x-casaos:
   title:
     en_us: AdGuard Home
   index: /
-  port_map: "3001"
+  port_map: "8000"
