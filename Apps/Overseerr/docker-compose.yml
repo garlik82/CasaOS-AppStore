@@ -1,1 +1,80 @@
+name: overseerr
+services:
+  overseerr:
+    environment:
+      PGID: $PGID
+      PUID: $PUID
+      TZ: $TZ
+      UMASK: "002"
+    image: sctx/overseerr:develop
+    deploy:
+      resources:
+        reservations:
+          memory: "256M"
+    network_mode: server
+    ports:
+      - target: 5055
+        published: "5055"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: TZ
+          description:
+            en_us: TimeZone
+            zh_cn: 时区
+        - container: PUID
+          description:
+            en_us: Run Overseerr as specified uid.
+            zh_cn: 以指定的 uid 运行 Overseerr。
+        - container: PGID
+          description:
+            en_us: Run Overseerr as specified gid.
+            zh_cn: 以指定的 gid 运行 Overseerr。
+        - container: UMASK
+          description:
+            en_us: Run Overseerr as specified UMASK.
+            zh_cn: 以指定的 UMASK 运行 Overseerr。
+      ports:
+        - container: "5055"
+          description:
+            en_us: WebUI HTTP Port
+            zh_cn: WebUI HTTP 端口
 
+      volumes:
+        - container: /config
+          description:
+            en_us: Overseerr config directory.
+            zh_cn: Overseerr 配置目录。
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: Overseerr
+  author: Ryan Cohen
+  category: Media
+  description:
+    en_us: Overseerr is a request management and media discovery tool built to work with your existing Plex ecosystem. 
+  developer: Ryan Cohen
+  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Overseerr/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Overseerr/screenshot-1.jpg
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Overseerr/screenshot-2.jpg
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Overseerr/screenshot-3.jpg
+  tagline:
+    en_us: Request app for your Plex server. Overseerr scans your Plex libraries at regular intervals, so it knows which items are already available on your server. It also integrates with the popular DVR applications Radarr and Sonarr, and supports activity monitoring within Overseerr itself.
+    
+  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/thumbnail.jpg
+  tips:
+    before_install:
+      en_us: 
+        During initial set-up, you will need to input your CasaOS device's IP address to connect to Plex (and optional services such as Radarr and Sonarr). 
+        You can find your device's IP address by visiting your router's admin dashboard or by using an IP scanning tool like Angry IP Scanner.
+  title:
+    en_us: Overseerr
+  index: /
+  port_map: "5055"
