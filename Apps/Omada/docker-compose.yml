@@ -1,1 +1,66 @@
-
+name: omada-controller
+services:
+  omada-controller:
+    environment:
+      MEM_LIMIT: "1024"
+      MEM_STARTUP: "1024"
+      PGID: "1000"
+      PUID: "1000"
+    image: mbentley/omada-controller:5.9
+    container_name: omada
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    network_mode: host
+    restart: unless-stopped
+     volumes:
+       - type: bind
+         source: /DATA/AppData/$AppID/data
+         target: /opt/tplink/EAPController/data
+       - type: bind
+         source: /DATA/AppData/$AppID/logs
+         target: /opt/tplink/EAPController/logs
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_us: ""
+        - container: PGID
+          description:
+            en_us: ""
+        - container: MEM_LIMIT
+          description:
+            en_us: ""
+        - container: MEM_STARTUP
+          description:
+            en_us: ""
+       volumes:
+         - container: /opt/tplink/EAPController/data
+           description:
+             en_us: ""
+         - container: /opt/tplink/EAPController/logs
+           description:
+             en_us: ""
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: Omnada-controller
+  author: Mbentley
+  category: Network
+  description:
+    en_us: 100% centralized cloud management of the whole network from different sites——all controlled from a single interface anywhere, anytime.
+  icon: https://cdn.jsdelivr.net/gh/garlik82/CasaOS-AppStore@main/Apps/Omada/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/garlik82/CasaOS-AppStore@main/Apps/Omada/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/garlik82/CasaOS-AppStore@main/Apps/Omada/screenshot-2.png
+  tagline:
+    en_us: Omada Software Defined Networking (SDN) platform integrates network devices, including access points,
+           switches and gateways, providing 100% centralized cloud management. Omada creates a highly scalable
+           network——all controlled from a single interface. Seamless wireless and wired connections are provided, ideal
+           for use in hospitality, education, retail, offices, and more.
+  tips: {}
+  title:
+    en_us: Omada-controller
+    zh_cn: Omada控制器
