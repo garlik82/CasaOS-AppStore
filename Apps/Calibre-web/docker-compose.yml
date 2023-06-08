@@ -6,12 +6,13 @@ services:
       PGID: $PGID
       PUID: $PUID
       TZ: $TZ
-    image: linuxserver/calibre-web:0.6.19
+    image: linuxserver/calibre-web:latest
+    container_name: calibre-web
     deploy:
       resources:
         reservations:
           memory: 64M
-    network_mode: bridge
+    network_mode: server
     ports:
       - target: 8083
         published: "8083"
