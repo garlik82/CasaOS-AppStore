@@ -46,7 +46,7 @@ x-casaos:
   architectures:
     - amd64
     - arm64
-  main: Omnada-controller
+  main: omada-controller
   author: Mbentley
   category: Network
   description:
