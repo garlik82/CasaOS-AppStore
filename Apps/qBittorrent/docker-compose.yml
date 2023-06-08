@@ -6,15 +6,16 @@ services:
       PUID: $PUID
       TZ: $TZ
       UMASK: "002"
-    image: hotio/qbittorrent:release-4.5.2
+    image: hotio/qbittorrent:latest
+    container_name: qbittorrent
     deploy:
       resources:
         reservations:
           memory: "256M"
-    network_mode: bridge
+    network_mode: host
     ports:
       - target: 8080
-        published: "8181"
+        published: "8080"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -22,8 +23,8 @@ services:
         source: /DATA/AppData/$AppID/config
         target: /config
       - type: bind
-        source: /DATA
-        target: /DATA
+        source: /DATA/Media/Downloads
+        target: /downloads
     x-casaos:
       envs:
         - container: TZ
@@ -112,8 +113,7 @@ x-casaos:
         | Name | Value |
         | ---- | ----- |
         | DATA Path | `/DATA` |
-        | Downloads Path | `/DATA/Downloads` |
-        | Media Path | `/DATA/Media` |
+        | Downloads Path | `/DATA/Media/Downloads` |
 
         The paths of other DATA subdirectories in CasaOS are also similar.
         Please make sure you use the correct path when using qBittorrent.
@@ -138,4 +138,4 @@ x-casaos:
   title:
     en_us: qBittorrent
   index: /
-  port_map: "8181"
+  port_map: "8080"
