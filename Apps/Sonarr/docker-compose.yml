@@ -6,6 +6,7 @@ services:
       PUID: $PUID
       TZ: $TZ
     image: hotio/sonarr:v4
+    container_name: sonarr
     deploy:
       resources:
         reservations:
