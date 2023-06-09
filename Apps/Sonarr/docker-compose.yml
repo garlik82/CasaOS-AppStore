@@ -79,7 +79,7 @@ x-casaos:
     sv_se: Sonarr är en PVR för användare av Usenet och BitTorrent. Den kan övervaka flera RSS-flöden för nya avsnitt av dina favoritprogram och fånga dem, sortera dem och döpa om dem. Den kan också konfigureras för att automatiskt uppgradera kvaliteten på de redan nedladdade filerna när en bättre kvalitet blir tillgänglig.
     uk_ua: Sonarr - це PVR для користувачів Usenet і BitTorrent. Він може відстежувати кілька RSS-каналів для нових серій ваших улюблених шоу і захоплювати, сортувати і перейменовувати їх. Він також може бути налаштований для автоматичного оновлення якості вже завантажених файлів, коли краща якість стає доступною.
   developer: Sonarr
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Sonarr/icon.png
+  icon: https://cdn.jsdelivr.net/gh/garlik82/CasaOS-AppStore@main/Apps/Sonarr/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Sonarr/screenshot-1.jpg
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Sonarr/screenshot-2.jpg
